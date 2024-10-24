@@ -5,11 +5,11 @@
                 <img src="https://freestyle4u.com/ai/logo.svg" alt="شعار المطعم">
             </div>
             <ul class="nav-menu">
-                <li><a href="#" class="active">الرئيسية</a></li>
-                <li><a href="#">قائمة الطعام</a></li>
-                <li><a href="#">العروض</a></li>
-                <li><a href="#">من نحن</a></li>
-                <li><a href="#">اتصل بنا</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
             </ul>
 
             <div class="menu__icon">
@@ -30,13 +30,7 @@
                     <span></span>
                     <span></span>
                 </div>
-
             </div>
-
-
-
-
-
         </nav>
     </div>
 </header>
@@ -45,11 +39,11 @@
     <div class="menu-content">
         <span class="close-menu" onclick="toggleMenu()">&times;</span>
         <div class="menu-section">
-           <a href="#" class="active">الرئيسية</a>
-           <a href="#">قائمة الطعام</a>
-           <a href="#">العروض</a>
-           <a href="#">من نحن</a>
-           <a href="#">اتصل بنا</a>
+            <a href="#" class="active">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Offers</a>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
         </div>
     </div>
 </div>

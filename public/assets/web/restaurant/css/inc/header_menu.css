@@ -1,11 +1,17 @@
 .main-header {
-    background-color: var(--white);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: fixed;
     width: 100%;
-    top: 0;
-    z-index: 1000;
     transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0;
 }
 
 .main-header.scrolled {
@@ -166,8 +172,64 @@
     .nav-menu {
         display: none;
     }
-
 }
+
+
+/* Horizontal tabs styles */
+.horizontal-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: var(--tabs-height);
+    padding: 0 5%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab {
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+}
+
+.tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--orange);
+    transition: all var(--transition-speed) ease;
+}
+
+.tab.active::after, .tab:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.tab.active, .tab:hover {
+    color: var(--orange);
+}
+
 
 
 
