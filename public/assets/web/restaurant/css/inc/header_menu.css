@@ -17,16 +17,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 0!important;
+    height: var(--header-height);
 }
 
-.logo img {
-    height: 60px;
-    transition: height 0.3s ease;
+.main-header .logo {
+
+}
+
+.main-header .logo img {
+    height: var(--logo-height);
 }
 
 .main-header.scrolled .logo img {
-    height: 50px;
+    height: var(--logo-height-scrolled);
 }
 
 .nav-menu {
@@ -35,31 +39,26 @@
     gap: 30px;
 }
 
+
 .nav-menu a {
     text-decoration: none;
-    color: var(--secondary-color);
-    font-weight: 500;
+    color: var(--primary-color);
+    font-weight: 600;
     transition: color 0.3s;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: var(--primary-color);
+.nav-menu a:hover,.nav-menu a.active {
+    color: var(--secondary-color);
 }
-
-
-
-
-
 
 .hamburger-menu {
     width: 24px;
     height: 18px;
     position: relative;
     cursor: pointer;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
+    display: none;
 }
 
 .hamburger-menu span {
@@ -83,7 +82,6 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Full-screen menu styles */
 .full-screen-menu {
     display: none;
     position: fixed;
@@ -94,18 +92,23 @@
     background-color: rgba(10, 57, 116, 0.95);
     z-index: 2000;
     overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .full-screen-menu.active {
     display: block;
+    opacity: 1;
+    visibility: visible;
 }
-
-.menu-content {
-    padding:70px;
+.full-screen-menu .menu-content {
+    padding: 70px 50px;
     color: var(--white);
 }
 
-.close-menu {
+
+.full-screen-menu .menu-content .close-menu {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -122,27 +125,49 @@
     transition: background-color 0.3s ease;
 }
 
-.close-menu:hover {
+.full-screen-menu .menu-content .close-menu:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.menu-section {
+.full-screen-menu .menu-section {
     margin-bottom: 1.5rem;
 }
 
-.menu-section a {
+.full-screen-menu .menu-section a {
     display: block;
     color: var(--white);
     text-decoration: none;
     padding: 0.4rem 0;
     transition: color var(--transition-speed) ease;
-    font-size: 0.9rem;
+    font-size: 1rem;
+}
+.full-screen-menu {
+    display: none;
 }
 
-.menu-section a:hover{
-    color: var(--orange);
+.menu__icon{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
 }
 
+.auth-button .btn.login {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    .nav-menu {
+        display: none;
+    }
+
+}
 
 
 

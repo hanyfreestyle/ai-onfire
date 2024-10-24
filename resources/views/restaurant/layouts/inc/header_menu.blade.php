@@ -1,4 +1,3 @@
-<!-- القسم العلوي - Header -->
 <header class="main-header">
     <div class="container">
         <nav class="nav-container">
@@ -13,15 +12,30 @@
                 <li><a href="#">اتصل بنا</a></li>
             </ul>
 
-            <div class="auth-buttons">
-                <button class="btn login">تسجيل دخول</button>
+            <div class="menu__icon">
+                <div class="auth-button">
+                    <div class="btn login" aria-label="Login">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <div class="cart-button">
+                    <div class="btn login" aria-label="cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+
+                <div class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
             </div>
 
-            <div class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
+
+
 
         </nav>
     </div>

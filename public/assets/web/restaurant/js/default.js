@@ -1,5 +1,5 @@
 // Select important elements
-const header = document.querySelector('.header');
+const header = document.querySelector('.main-header');
 const fullScreenMenu = document.getElementById('fullScreenMenu');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 
