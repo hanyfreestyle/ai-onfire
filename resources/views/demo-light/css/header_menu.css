@@ -91,9 +91,9 @@
     border: none;
 }
 .full-screen-menu .menu-content .close-menu::before {
-    content: "×"; /* استخدم الرمز × */
-    font-size: 24px; /* تعديل حجم الحرف */
-    color: var(--white); /* لون الحرف */
+    content: "×";
+    font-size: 24px;
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,13 +117,6 @@
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-}
-.auth-button .btn.login,
-.cart-button .btn.login {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
 }
 @media (max-width: 768px) {
     .hamburger-menu {
