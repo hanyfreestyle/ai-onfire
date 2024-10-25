@@ -37,7 +37,7 @@
 
 <div class="full-screen-menu" id="fullScreenMenu">
     <div class="menu-content">
-        <span class="close-menu" onclick="toggleMenu()">&times;</span>
+        <button class="close-menu" onclick="toggleMenu()" aria-label="Close Menu"></button>
         <div class="menu-section">
             <a href="#" class="active">Home</a>
             <a href="#">Menu</a>

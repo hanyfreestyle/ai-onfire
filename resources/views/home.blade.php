@@ -16,7 +16,7 @@
 
 @endpush
 @section('content')
-    <div class="container">
+    <div class="container category__container__section">
         @for($i = 1; $i <= 5; $i++)
             <section id="Category-{{$i}}" class="category__section">
                 <h2>Category {{$i}}</h2>

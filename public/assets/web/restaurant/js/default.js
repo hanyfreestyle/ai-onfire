@@ -5,7 +5,7 @@ const hamburgerMenu = document.querySelector('.hamburger-menu');
 
 const horizontalTabs = document.querySelector('.horizontal-tabs');
 const tabs = document.querySelectorAll('.horizontal-tabs .tab');
-const sections = document.querySelectorAll('.content section');
+const sections = document.querySelectorAll('.category__container__section section');
 
 
 // Function to toggle the 'scrolled' class on header
