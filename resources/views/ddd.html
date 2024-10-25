@@ -747,18 +747,18 @@
         let currentSectionId = '';
         const headerOffset = header.offsetHeight + horizontalTabs.offsetHeight;
 
-        // sections.forEach(section => {
-        //     const sectionTop = section.offsetTop - headerOffset;
-        //     const sectionBottom = sectionTop + section.offsetHeight;
-        //     if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
-        //         currentSectionId = section.id;
-        //     }
-        // });
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - headerOffset;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
+                currentSectionId = section.id;
+            }
+        });
 
-        // tabs.forEach(tab => {
-        //     const href = tab.getAttribute('href').substring(1);
-        //     tab.classList.toggle('active', href === currentSectionId);
-        // });
+        tabs.forEach(tab => {
+            const href = tab.getAttribute('href').substring(1);
+            tab.classList.toggle('active', href === currentSectionId);
+        });
     }
 
     // Function to smooth scroll to section when clicking on a tab
@@ -798,7 +798,7 @@
     // Event Listeners
     window.addEventListener('scroll', () => {
         toggleHeaderScroll();
-        // highlightActiveTab();
+        highlightActiveTab();
     });
     window.addEventListener('resize', updateMoreTabsIndicator);
     searchInput.addEventListener('keypress', handleSearch);
@@ -810,7 +810,7 @@
 
     // Initial calls
     toggleHeaderScroll();
-    // highlightActiveTab();
+    highlightActiveTab();
     updateMoreTabsIndicator();
 
     // Intersection Observer for more accurate section tracking
