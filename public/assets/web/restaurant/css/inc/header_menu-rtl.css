@@ -1,0 +1,44 @@
+/* تأكد من أن الاتجاه العام من اليمين إلى اليسار */
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* تعديل العرض المرئي للقائمة الرئيسية */
+.nav-menu {
+
+}
+
+.nav-menu li {
+    margin-left: 0;
+    margin-right: 30px; /* إضافة تباعد على اليمين بدلاً من اليسار */
+}
+
+/* تعديل الأزرار لتناسب الاتجاه من اليمين إلى اليسار */
+.auth-button .btn.login,
+.cart-button .btn.login {
+    margin-left: 0;
+    margin-right: 10px; /* نقل التباعد إلى اليمين */
+}
+
+/* تنسيق المنيو الكاملة */
+.full-screen-menu .menu-content {
+    text-align: right; /* تأكيد محاذاة النص إلى اليمين */
+}
+
+/* تعديل محاذاة العناصر في قائمة التنقل */
+.menu__icon {
+    justify-content: flex-end; /* ضبط محاذاة الأيقونات إلى اليمين */
+}
+
+/* ضبط اتجاه أيقونة القائمة (hamburger) */
+.hamburger-menu {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* ضبط اتجاه أيقونة الإغلاق للقائمة */
+.full-screen-menu .menu-content .close-menu {
+    right: 20px;
+    left: auto;
+}

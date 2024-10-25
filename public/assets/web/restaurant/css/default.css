@@ -14,9 +14,12 @@
     --header-height: 70px;
     --logo-height: calc(var(--header-height) - 20px);
     --logo-height-scrolled: calc(var(--header-height) - 20px);
+
 }
 
 body {
+    margin: 0;
+    padding: 0;
     padding-top: calc(var(--header-height) + var(--tabs-height));
 }
 

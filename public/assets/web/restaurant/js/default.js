@@ -6,7 +6,7 @@ const hamburgerMenu = document.querySelector('.hamburger-menu');
 const horizontalTabs = document.querySelector('.horizontal-tabs');
 const tabs = document.querySelectorAll('.horizontal-tabs .tab');
 const sections = document.querySelectorAll('.content section');
-const moreTabsIndicator = document.querySelector('.more-tabs-indicator');
+
 
 // Function to toggle the 'scrolled' class on header
 function toggleHeaderScroll() {
@@ -70,34 +70,25 @@ function scrollToTop() {
     });
 }
 
-// Function to update more tabs indicator visibility
-function updateMoreTabsIndicator() {
-    const isScrollable = horizontalTabs.scrollWidth > horizontalTabs.clientWidth;
-    moreTabsIndicator.style.display = isScrollable ? 'flex' : 'none';
-}
 
 // Function to handle tab scrolling
 function handleTabScroll() {
     const maxScroll = horizontalTabs.scrollWidth - horizontalTabs.clientWidth;
-    moreTabsIndicator.style.opacity = horizontalTabs.scrollLeft >= maxScroll - 10 ? '0' : '1';
-}
+ }
 
 // Event Listeners
 window.addEventListener('scroll', () => {
     toggleHeaderScroll();
     highlightActiveTab();
 });
-window.addEventListener('resize', updateMoreTabsIndicator);
-fullScreenMenu.addEventListener('click', (event) => {
-    if (event.target === fullScreenMenu) toggleMenu();
-});
+
 tabs.forEach(tab => tab.addEventListener('click', scrollToSection));
 horizontalTabs.addEventListener('scroll', handleTabScroll);
 
 // Initial calls
 toggleHeaderScroll();
 highlightActiveTab();
-updateMoreTabsIndicator();
+
 
 // Intersection Observer for more accurate section tracking
 const observerOptions = {
