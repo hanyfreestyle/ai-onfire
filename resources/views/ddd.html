@@ -1,56 +1,53 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Name</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <title>Responsive Landing Page with Smart Search Bar and Back Button</title>
+    <link rel="icon" type="image/svg+xml" href="https://realestate.eg/fav-icon.svg">
+    <link rel="alternate icon" type="image/png" href="https://realestate.eg/fav-icon.png">
+    <link rel="apple-touch-icon" href="https://realestate.eg/fav-icon.png">
+    <link rel="mask-icon" href="https://realestate.eg/fav-icon.svg" color="#000000">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base styles and variables */
         :root {
             --orange: rgb(245, 128, 34);
             --dark-blue: rgb(10, 57, 116);
-
-            --secondary-color: rgb(245, 128, 34);
-            --primary-color: rgb(10, 57, 116);
             --white: #ffffff;
             --light-gray: #f9f9f9;
             --medium-gray: #e0e0e0;
             --dark-gray: #333333;
-
+            --header-height: 60px;
             --tabs-height: 50px;
             --transition-speed: 0.3s;
             --border-radius: 10px;
             --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-            --header-height: 70px;
-            --logo-height: calc(var(--header-height) - 20px);
-            --logo-height-scrolled: calc(var(--header-height) - 20px);
-
         }
 
-        body {
-            padding-top: calc(var(--header-height) + var(--tabs-height));
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
+        body, html {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--dark-blue);
+            background-color: var(--light-gray);
+            padding-top: calc(var(--header-height) + var(--tabs-height));
+            margin-bottom: 50px;
+        }
 
-        .main-header {
-            width: 100%;
-            transition: all 0.3s ease;
+        /* Header styles */
+        .header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 0 5%;
             background-color: var(--white);
             box-shadow: var(--box-shadow);
             position: fixed;
@@ -58,60 +55,93 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 0;
-        }
-
-        .main-header.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 !important;
             height: var(--header-height);
+            transition: all var(--transition-speed) ease;
         }
 
-        .main-header .logo {
-
-        }
-
-        .main-header .logo img {
-            height: var(--logo-height);
-        }
-
-        .main-header.scrolled .logo img {
-            height: var(--logo-height-scrolled);
-        }
-
-        .nav-menu {
+        .logo-container, .back-button {
+            width: 120px;
+            height: 40px;
             display: flex;
-            list-style: none;
-            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-speed) ease;
         }
 
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 600;
-            transition: color 0.3s;
+        .logo-container img {
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
         }
 
-        .nav-menu a:hover, .nav-menu a.active {
-            color: var(--secondary-color);
+        .back-button {
+            position: absolute;
+            left: 5%;
+            width: 40px;
+            height: 40px;
+            background-color: var(--orange);
+            color: var(--white);
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
         }
 
+        .back-button i {
+            font-size: 20px;
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            position: relative;
+            width: 40%;
+            max-width: 400px;
+            height: 36px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .search-bar input {
+            width: 100%;
+            height: 100%;
+            padding: 0 36px 0 12px;
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            color: var(--dark-blue);
+            font-size: 0.9rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .search-bar input::placeholder {
+            color: var(--dark-blue);
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 5px rgba(245, 128, 34, 0.5);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--dark-blue);
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* Hamburger menu styles */
         .hamburger-menu {
             width: 24px;
             height: 18px;
             position: relative;
             cursor: pointer;
+            display: flex;
             flex-direction: column;
             justify-content: space-between;
-            display: none;
         }
 
         .hamburger-menu span {
@@ -135,95 +165,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        .full-screen-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(10, 57, 116, 0.95);
-            z-index: 2000;
-            overflow-y: auto;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .full-screen-menu.active {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .full-screen-menu .menu-content {
-            padding: 70px 50px;
-            color: var(--white);
-        }
-
-
-        .full-screen-menu .menu-content .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 36px;
-            color: var(--white);
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-
-        .full-screen-menu .menu-content .close-menu:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .full-screen-menu .menu-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .full-screen-menu .menu-section a {
-            display: block;
-            color: var(--white);
-            text-decoration: none;
-            padding: 0.4rem 0;
-            transition: color var(--transition-speed) ease;
-            font-size: 1rem;
-        }
-
-        .full-screen-menu {
-            display: none;
-        }
-
-        .menu__icon {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .auth-button .btn.login {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: flex;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-        }
-
+        /* Horizontal tabs styles */
         .horizontal-tabs {
             display: flex;
             justify-content: center;
@@ -278,8 +220,145 @@
             color: var(--orange);
         }
 
+        /* Full-screen menu styles */
+        .full-screen-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 57, 116, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
+        }
 
+        .full-screen-menu.active {
+            display: block;
+        }
+
+        .menu-content {
+            padding: 80px 5% 2rem;
+            color: var(--white);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 36px;
+            color: var(--white);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-menu:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--orange);
+            cursor: pointer;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .menu-section a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.4rem 0;
+            transition: color var(--transition-speed) ease;
+            font-size: 0.9rem;
+        }
+
+        .menu-section a:hover,
+        .menu-section h2:hover {
+            color: var(--orange);
+        }
+
+        .menu-section i {
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
+        }
+
+        .submenu {
+            margin-left: 1rem;
+        }
+
+        /* Main content styles */
+        .content {
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content section {
+            margin-bottom: 3rem;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--orange);
+        }
+
+        .content p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        /* Responsive design */
         @media (max-width: 768px) {
+            .header {
+                padding: 0 3%;
+            }
+
+            .logo-container {
+                width: 100px;
+                height: 35px;
+            }
+
+            .back-button {
+                left: 3%;
+                width: 35px;
+                height: 35px;
+            }
+
+            .search-bar {
+                width: 50%;
+            }
 
             .horizontal-tabs {
                 justify-content: flex-start;
@@ -291,10 +370,38 @@
                 font-size: 0.8rem;
             }
 
+            .content {
+                padding: 1.5rem 3%;
+            }
+
+            .content section {
+                padding: 1.5rem;
+            }
+
+            .menu-content {
+                padding: 70px 3% 2rem;
+            }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
+            .header {
+                padding: 0 4%;
+            }
 
+            .logo-container {
+                width: 110px;
+                height: 38px;
+            }
+
+            .back-button {
+                left: 4%;
+                width: 38px;
+                height: 38px;
+            }
+
+            .search-bar {
+                width: 45%;
+            }
 
             .horizontal-tabs {
                 padding: 0 4%;
@@ -304,11 +411,45 @@
                 padding: 0 12px;
             }
 
+            .content {
+                padding: 1.75rem 4%;
+            }
 
+            .content section {
+                padding: 1.75rem;
+            }
+
+            .menu-content {
+                padding: 80px 4% 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .menu-section {
+                width: calc(50% - 1rem);
+            }
         }
 
         @media (min-width: 1025px) {
+            .header {
+                padding: 0 5%;
+            }
 
+            .logo-container {
+                width: 120px;
+                height: 40px;
+            }
+
+            .back-button {
+                left: 5%;
+                width: 40px;
+                height: 40px;
+            }
+
+            .search-bar {
+                width: 40%;
+            }
 
             .horizontal-tabs {
                 padding: 0 5%;
@@ -318,372 +459,263 @@
                 padding: 0 20px;
                 font-size: 1rem;
             }
-        }
 
-        .category__section {
-            padding: 10px 0;
-            margin: 20px 0;
-
-        }
-
-        .category__section h2 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-
-
-        }
-
-        .category__container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px; /* المسافة بين الكروت */
-        }
-
-        .product__card {
-            width: calc(25% - 15px); /* عرض 4 كروت في الصف مع المسافة */
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card__img {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .card__img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* لتغطية الصورة بالكامل داخل العنصر */
-        }
-
-        .card__name {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        /* تنسيق خاص لشاشات الموبايل */
-        @media (max-width: 768px) {
-            .product__card {
-                width: calc(50% - 15px); /* عرض 4 كروت في الصف مع المسافة */
+            .content {
+                padding: 2rem 5%;
             }
 
-            .card__img {
-                width: 100%;
-                height: 100px;
-                overflow: hidden;
+            .content section {
+                padding: 2rem;
+            }
+
+            .menu-content {
+                padding: 100px 5% 3rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .menu-section {
+                width: calc(33.33% - 2rem);
             }
         }
 
+        /* Animations and transitions */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
+        .content section {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .tab {
+            transition: all 0.3s ease;
+        }
+
+        .tab:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Header transition */
+        .header.scrolled .logo-container {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+
+        .header.scrolled .back-button {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .header.scrolled .search-bar {
+            width: calc(100% - 150px);
+            max-width: 700px;
+        }
+
+        /* Additional styles */
+        .search-bar.expanded input {
+            padding-right: 40px;
+        }
+
+        .menu-section a.active {
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+        .menu-section a:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger-menu:hover span {
+            background-color: var(--orange);
+        }
+
+        .back-button:hover {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Geometric shapes */
+        .geometric-shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--orange);
+            top: 20%;
+            left: 5%;
+        }
+
+        .square {
+            width: 80px;
+            height: 80px;
+            background-color: var(--dark-blue);
+            bottom: 15%;
+            right: 10%;
+            transform: rotate(45deg);
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 86.6px solid var(--medium-gray);
+            top: 40%;
+            right: 15%;
+        }
     </style>
-
 </head>
 <body>
-
-<header class="main-header">
-    <div class="container">
-        <nav class="nav-container">
-            <div class="logo">
-                <img src="https://freestyle4u.com/ai/logo.svg" alt="شعار المطعم">
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Offers</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-
-            <div class="menu__icon">
-                <div class="auth-button">
-                    <div class="btn login" aria-label="Login">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-
-                <div class="cart-button">
-                    <div class="btn login" aria-label="cart">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                </div>
-
-                <div class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
+<header class="header">
+    <div class="logo-container">
+        <img src="https://realestate.eg/new-logo.svg" alt="Logo">
+    </div>
+    <div class="back-button" onclick="scrollToTop()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Where Do you want to live?" aria-label="Search">
+        <i class="fas fa-search search-icon"></i>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </header>
 
+<div class="horizontal-tabs-container">
+    <nav class="horizontal-tabs">
+        <a href="#project-units" class="tab">Project Units</a>
+        <a href="#project-description" class="tab">Project Description</a>
+        <a href="#amenities" class="tab">Amenities</a>
+        <a href="#project-video" class="tab">Project Video</a>
+        <a href="#project-location" class="tab">Project Location</a>
+        <a href="#faq" class="tab">FAQ</a>
+        <a href="#similar-projects" class="tab">Similar Projects</a>
+    </nav>
+    <div class="more-tabs-indicator"></div>
+</div>
 <div class="full-screen-menu" id="fullScreenMenu">
     <div class="menu-content">
         <span class="close-menu" onclick="toggleMenu()">&times;</span>
         <div class="menu-section">
-            <a href="#" class="active">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">Offers</a>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
+            <h2>Compounds</h2>
+            <a href="https://realestate.eg/en/compounds">All Compounds</a>
+            <div class="submenu">
+                <a href="https://realestate.eg/en/new-cairo">New Cairo</a>
+                <a href="https://realestate.eg/en/new-administrative-capital">New Administrative Capital</a>
+                <a href="https://realestate.eg/en/north-coast">North Coast</a>
+                <a href="https://realestate.eg/en/sheikh-zayed">Sheikh Zayed</a>
+                <a href="https://realestate.eg/en/sixth-october-city">6th of October City</a>
+                <a href="https://realestate.eg/en/al-ain-al-sokhna">Al Ain Al Sokhna</a>
+                <a href="https://realestate.eg/en/sherouk">Sherouk</a>
+                <a href="https://realestate.eg/en/new-alamein">New Alamein</a>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>For Sale</h2>
+            <a href="https://realestate.eg/en/for-sale">All Properties for Sale</a>
+            <div class="submenu">
+                <a href="https://realestate.eg/en/listings/new-cairo?location=8">New Cairo Properties</a>
+                <a href="https://realestate.eg/en/listings/new-cairo?location=8&property_type=villa">New Cairo Villas</a>
+                <a href="https://realestate.eg/en/listings/new-administrative-capital?location=6">New Administrative Capital Properties</a>
+                <a href="https://realestate.eg/en/listings/sixth-october-city?location=15">6th of October City Properties</a>
+                <a href="https://realestate.eg/en/listings/sheikh-zayed?location=16&property_type=apartment">Sheikh Zayed Apartments</a>
+                <a href="https://realestate.eg/en/listings/north-coast?location=4&property_type=chalet">North Coast Chalets</a>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Developers</h2>
+            <a href="https://realestate.eg/en/developers">All Developers</a>
+            <div class="submenu">
+                <a href="https://realestate.eg/en/developers/mountain-view">Mountain View</a>
+                <a href="https://realestate.eg/en/developers/palm-hills">Palm Hills</a>
+                <a href="https://realestate.eg/en/developers/emaar-misr">Emaar Misr</a>
+                <a href="https://realestate.eg/en/developers/sodic">SODIC</a>
+                <a href="https://realestate.eg/en/developers/misr-italia">Misr Italia</a>
+                <a href="https://realestate.eg/en/developers/city-edge">City Edge</a>
+                <a href="https://realestate.eg/en/developers/la-vista">La Vista</a>
+                <a href="https://realestate.eg/en/developers/ora-development">ORA Development</a>
+                <a href="https://realestate.eg/en/developers/hyde-park">Hyde Park</a>
+                <a href="https://realestate.eg/en/developers/madinet-nasr-housing-development">Madinet Nasr Housing Development</a>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Blog</h2>
+            <a href="https://realestate.eg/en/blog">Visit Our Blog</a>
+        </div>
+        <div class="menu-section">
+            <h2>Contact Us</h2>
+            <a href="https://realestate.eg/en/contact-us">Get in Touch</a>
         </div>
     </div>
 </div>
-
-<div class="horizontal-tabs-container">
-    <nav class="horizontal-tabs">
-        <a href="#Category-1" class="tab">Category 1</a>
-        <a href="#Category-2" class="tab">Category 2</a>
-        <a href="#Category-3" class="tab">Category 3</a>
-        <a href="#Category-4" class="tab">Category 4</a>
-        <a href="#Category-5" class="tab">Category 5</a>
-    </nav>
-</div>
-
-
-<div class="container">
-    <section id="Category-1" class="category__section">
-        <h2>Category 1</h2>
-        <div class="category__container">
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/01.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 1</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/02.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 2</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/03.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 3</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/04.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 4</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/05.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 5</h2>
-                </div>
-            </div>
-        </div>
+<main class="content">
+    <section id="project-units">
+        <h2>Project Units</h2>
+        <p>Explore our diverse range of project units designed to meet your specific needs and preferences.</p>
+        <!-- Add more content about project units -->
     </section>
-    <section id="Category-2" class="category__section">
-        <h2>Category 2</h2>
-        <div class="category__container">
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/01.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 1</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/02.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 2</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/03.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 3</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/04.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 4</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/05.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 5</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="Category-3" class="category__section">
-        <h2>Category 3</h2>
-        <div class="category__container">
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/01.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 1</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/02.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 2</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/03.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 3</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/04.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 4</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/05.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 5</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="Category-4" class="category__section">
-        <h2>Category 4</h2>
-        <div class="category__container">
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/01.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 1</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/02.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 2</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/03.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 3</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/04.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 4</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/05.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 5</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="Category-5" class="category__section">
-        <h2>Category 5</h2>
-        <div class="category__container">
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/01.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 1</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/02.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 2</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/03.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 3</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/04.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 4</h2>
-                </div>
-            </div>
-            <div class="product__card">
-                <div class="card__img">
-                    <img src="https://freestyle4u.com/ai/05.webp">
-                </div>
-                <div class="card__name">
-                    <h2>Product Name 5</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
 
+    <section id="project-description">
+        <h2>Project Description</h2>
+        <p>Discover the unique features and benefits of our cutting-edge real estate project.</p>
+        <!-- Add more content about project description -->
+    </section>
 
-<!-- روابط JavaScript -->
+    <section id="amenities">
+        <h2>Amenities</h2>
+        <p>Experience luxury living with our wide array of world-class amenities designed for your comfort and convenience.</p>
+        <!-- Add more content about amenities -->
+    </section>
+
+    <section id="project-video">
+        <h2>Project Video</h2>
+        <p>Watch our immersive project video to get a virtual tour of your future home.</p>
+        <!-- Add project video or placeholder -->
+    </section>
+
+    <section id="project-location">
+        <h2>Project Location</h2>
+        <p>Strategically located for easy access to key areas, our project offers the perfect balance of convenience and tranquility.</p>
+        <!-- Add map or location details -->
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our project, buying process, and more.</p>
+        <!-- Add FAQ content -->
+    </section>
+
+    <section id="similar-projects">
+        <h2>Similar Projects</h2>
+        <p>Explore other projects that might interest you based on your preferences.</p>
+        <!-- Add similar projects content -->
+    </section>
+</main>
 
 <script>
     // Select important elements
-    const header = document.querySelector('.main-header');
+    const header = document.querySelector('.header');
     const fullScreenMenu = document.getElementById('fullScreenMenu');
     const hamburgerMenu = document.querySelector('.hamburger-menu');
-
+    const searchInput = document.querySelector('.search-bar input');
     const horizontalTabs = document.querySelector('.horizontal-tabs');
     const tabs = document.querySelectorAll('.horizontal-tabs .tab');
     const sections = document.querySelectorAll('.content section');
@@ -715,18 +747,18 @@
         let currentSectionId = '';
         const headerOffset = header.offsetHeight + horizontalTabs.offsetHeight;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerOffset;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
-                currentSectionId = section.id;
-            }
-        });
+        // sections.forEach(section => {
+        //     const sectionTop = section.offsetTop - headerOffset;
+        //     const sectionBottom = sectionTop + section.offsetHeight;
+        //     if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
+        //         currentSectionId = section.id;
+        //     }
+        // });
 
-        tabs.forEach(tab => {
-            const href = tab.getAttribute('href').substring(1);
-            tab.classList.toggle('active', href === currentSectionId);
-        });
+        // tabs.forEach(tab => {
+        //     const href = tab.getAttribute('href').substring(1);
+        //     tab.classList.toggle('active', href === currentSectionId);
+        // });
     }
 
     // Function to smooth scroll to section when clicking on a tab
@@ -766,9 +798,10 @@
     // Event Listeners
     window.addEventListener('scroll', () => {
         toggleHeaderScroll();
-        highlightActiveTab();
+        // highlightActiveTab();
     });
     window.addEventListener('resize', updateMoreTabsIndicator);
+    searchInput.addEventListener('keypress', handleSearch);
     fullScreenMenu.addEventListener('click', (event) => {
         if (event.target === fullScreenMenu) toggleMenu();
     });
@@ -777,7 +810,7 @@
 
     // Initial calls
     toggleHeaderScroll();
-    highlightActiveTab();
+    // highlightActiveTab();
     updateMoreTabsIndicator();
 
     // Intersection Observer for more accurate section tracking
@@ -800,7 +833,6 @@
     }, observerOptions);
 
     sections.forEach(section => observer.observe(section));
-
 
 </script>
 </body>
