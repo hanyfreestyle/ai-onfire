@@ -1,28 +1,22 @@
 :root {
     --orange: rgb(245, 128, 34);
     --dark-blue: rgb(10, 57, 116);
-
     --secondary-color: rgb(245, 128, 34);
     --primary-color: rgb(10, 57, 116);
     --white: #ffffff;
     --light-gray: #f9f9f9;
     --medium-gray: #e0e0e0;
     --dark-gray: #333333;
-
     --tabs-height: 50px;
     --transition-speed: 0.3s;
     --border-radius: 10px;
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
     --header-height: 70px;
     --logo-height: calc(var(--header-height) - 20px);
     --logo-height-scrolled: calc(var(--header-height) - 20px);
-
 }
 
-
 body {
-    direction: rtl;
     padding-top: calc(var(--header-height) + var(--tabs-height));
 }
 
@@ -33,6 +27,7 @@ body {
     padding: 0 15px;
 }
 
-
-
-
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
