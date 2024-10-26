@@ -20,15 +20,6 @@ function toggleMenu() {
     hamburgerMenu.classList.toggle('open');
 }
 
-// Function to handle search input
-function handleSearch(event) {
-    if (event.key === 'Enter') {
-        const searchTerm = event.target.value;
-        alert('Searching for: ' + searchTerm);
-        // Implement search functionality here
-    }
-}
-
 // Function to highlight active tab based on scroll position
 function highlightActiveTab() {
     let currentSectionId = '';
@@ -62,19 +53,11 @@ function scrollToSection(e) {
     });
 }
 
-// Function to scroll to top
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
 
 // Function to handle tab scrolling
 function handleTabScroll() {
     const maxScroll = horizontalTabs.scrollWidth - horizontalTabs.clientWidth;
- }
+}
 
 // Event Listeners
 window.addEventListener('scroll', () => {
