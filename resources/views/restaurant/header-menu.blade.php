@@ -34,11 +34,11 @@
                                         <span class="quantity">1</span>
                                         <button class="quantity__btn plus">+</button>
                                     </div>
-                                    <button class="add_to_cart">
+                                    <div class="add_to_cart">
                                         <span class="cart__text">اضف</span>
                                         <span class="desktop__text">للسلة</span>
                                         <i class="fa-solid fa-cart-shopping"></i>
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
