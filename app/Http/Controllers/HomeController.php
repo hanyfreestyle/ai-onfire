@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\MinifyTools;
+use App\Models\admin\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller {
     //
@@ -35,6 +37,7 @@ class HomeController extends Controller {
                 'About us',
                 'Contact us',
             ];
+            $langFiter = "ar";
         } else {
             $menu_lang = [
                 'الرئيسية',
@@ -43,13 +46,34 @@ class HomeController extends Controller {
                 'من نحن',
                 'أتصل بنا ',
             ];
+            $langFiter = "ar";
         }
+
+        $categoriesWithProducts = DB::table('categories')
+            ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')
+            ->join('category_product', 'categories.id', '=', 'category_product.category_id')
+            ->join('products', 'category_product.product_id', '=', 'products.id')
+            ->join('product_translations', 'products.id', '=', 'product_translations.product_id')
+            ->where('category_translations.locale', $langFiter)
+            ->where('product_translations.locale', $langFiter)
+            ->select(
+                'categories.id as category_id',
+                'category_translations.name as category_name',
+                'products.id as product_id',
+                'product_translations.name as product_name',
+                'products.photo as product_image',
+                'products.price as product_price'
+            )
+            ->orderBy('categories.id')
+            ->get()
+            ->groupBy('category_id'); // تجميع المنتجات تحت معرف المجموعة
 
 
         return view('restaurant.header-menu')->with([
             'pageView' => $pageView,
             'minifyTools' => $minifyTools,
             'menu_lang' => $menu_lang,
+            'categoriesWithProducts' => $categoriesWithProducts,
 
         ]);
     }

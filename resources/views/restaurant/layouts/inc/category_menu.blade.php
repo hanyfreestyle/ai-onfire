@@ -1,7 +1,7 @@
 <div class="horizontal-tabs-container">
     <nav class="horizontal-tabs">
-        @for($i = 1; $i <= 9; $i++)
-            <a href="#Category-{{$i}}" class="tab">Category {{$i}}</a>
-        @endfor
+        @foreach($categoriesWithProducts as $categoryId => $products)
+            <a href="#Category-{{$categoryId}}" class="tab">{{$products->first()->category_name}}</a>
+        @endforeach
     </nav>
 </div>

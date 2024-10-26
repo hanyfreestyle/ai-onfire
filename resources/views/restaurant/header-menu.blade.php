@@ -1,23 +1,26 @@
 @extends('restaurant.layouts.app')
 @section('content')
     <div class="container category__container__section">
-        @for($i = 1; $i <= 9; $i++)
-            <section id="Category-{{$i}}" class="category__section">
-                <h2>Category {{$i}}</h2>
+        @foreach($categoriesWithProducts as $categoryId => $products)
+            <section id="Category-{{$categoryId}}" class="category__section">
+                <h2>{{$products->first()->category_name}}</h2>
                 <div class="category__container">
-                    @for($x = 1; $x <= 3; $x++)
+
+                    @foreach($products as $product)
                         <div class="product__card">
                             <div class="card__img">
-                                <img src="{{asset('assets/web/restaurant/img/0'.$x.'.webp')}}">
+                                <img src="{{asset($product->product_image) }}">
                             </div>
                             <div class="card__name">
-                                <h2>Product Name {{$x}}</h2>
+                                <h2>{{$product->product_name}}</h2>
+                                <h2>{{$product->product_price}}</h2>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
+
                 </div>
             </section>
-        @endfor
+        @endforeach
     </div>
 @endsection
 
