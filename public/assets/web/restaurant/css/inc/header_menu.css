@@ -159,8 +159,12 @@
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
+    background-color: red;
 }
 
+.auth-button{
+    display: flex;
+}
 @media (max-width: 768px) {
     .hamburger-menu {
         display: flex; /* عرض زر القائمة في الشاشات الصغيرة */

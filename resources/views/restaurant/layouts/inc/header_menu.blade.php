@@ -15,6 +15,7 @@
             </ul>
 
             <div class="menu__icon">
+
                 <div class="auth-button">
                     <div class="btn login" aria-label="Login">
                         <i class="fas fa-user"></i>
