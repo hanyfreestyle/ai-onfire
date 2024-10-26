@@ -16,14 +16,14 @@
 
             <div class="menu__icon">
 
-                <div class="auth-button">
-                    <div class="btn login" aria-label="Login">
+                <div class="__icon">
+                    <div class="btn login-button" aria-label="Login">
                         <i class="fas fa-user"></i>
                     </div>
                 </div>
 
-                <div class="cart-button">
-                    <div class="btn login" aria-label="cart">
+                <div class="__icon">
+                    <div class="btn cart-button" aria-label="cart">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                 </div>
