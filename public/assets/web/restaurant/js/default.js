@@ -26,7 +26,7 @@ function highlightActiveTab() {
     const headerOffset = header.offsetHeight + horizontalTabs.offsetHeight;
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - headerOffset;
+        const sectionTop = (section.offsetTop - headerOffset) - 15;
         const sectionBottom = sectionTop + section.offsetHeight;
         if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
             currentSectionId = section.id;
@@ -46,8 +46,9 @@ function scrollToSection(e) {
     const targetSection = document.querySelector(targetId);
 
     // حساب موضع القسم والانتقال العمودي
-    const headerOffset = header.offsetHeight + horizontalTabs.offsetHeight;
+    const headerOffset = (header.offsetHeight + horizontalTabs.offsetHeight)+15;
     const targetPosition = targetSection.offsetTop - headerOffset;
+
 
     window.scrollTo({
         top: targetPosition,
