@@ -72,11 +72,11 @@ a{
 
 
 
-.category__section_h2::after {border-bottom: 2px solid rgba(255,255,255,.4)}
+.category__section_h2::after {border-bottom: 2px solid rgba(255,255,255,.1)}
 .styled-text {background: #1a1a1a;color: var(--text-color);}
 .product__card {background: #1a1a1a;border: 1px solid rgba(255,255,255,.1);}
 .product__image {background: #0d0d0d;}
-.image__wrapper {border-bottom: 1px solid rgba(255,255,255,.4)}
+.image__wrapper {border-bottom: 1px solid rgba(255,255,255,.1)!important;}
 .product__name {color: var(--text-color);}
 .currency {color: var(--text-color);}
 .quantity__btn {border: 1px solid #f5f5f5!important;background: #f5f5f5;}
