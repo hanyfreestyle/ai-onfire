@@ -39,9 +39,7 @@
 
 
 .logo img {
-
     max-height:50px;
-
 }
 
 .main-header.scrolled .logo img {
@@ -209,9 +207,8 @@
         display: none; /* إخفاء القائمة الرئيسية في الشاشات الصغيرة */
     }
 
-    .logo {
-        max-width: 45%;
-        max-height:85%;
+    .logo img {
+        max-height:40px;
     }
 
 }
