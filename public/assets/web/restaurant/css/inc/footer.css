@@ -9,7 +9,7 @@
 }
 
 .category__section_h2 {
-    width: 100%;
+    width:94%;
     margin-bottom: 20px;
     padding-right: 30px;
     position: relative;
@@ -18,7 +18,6 @@
 }
 
 .styled-text {
-
     font-weight: bold;
     color: var(--primary-color);
     background-color: var(--white); /* خلفية بيضاء للنص */
@@ -26,6 +25,12 @@
     position: relative;
     z-index: 1;
     min-width: 100px;
+}
+
+@media (max-width: 768px) {
+    .styled-text {
+        padding: 5px 30px; /* مسافة على الجانبين */
+    }
 }
 
 .category__section_h2::after {
