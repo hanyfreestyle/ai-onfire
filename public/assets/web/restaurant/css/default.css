@@ -15,6 +15,10 @@
     --logo-height: calc(var(--header-height) - 20px);
     --logo-height-scrolled: calc(var(--header-height) - 20px);
 }
+html[lang="ar"] body {
+    direction: rtl;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -30,3 +34,11 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
+
+/*html[lang="ar"] .horizontal-tabs {*/
+/*    direction: rtl;*/
+/*}*/
+
+/*html[lang="ar"] .tab {*/
+/*    direction: rtl;*/
+/*}*/
