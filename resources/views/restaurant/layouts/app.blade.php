@@ -13,6 +13,9 @@
     @if(request()->segment(1) == 'ar')
         {!! $minifyTools->MinifyCss('css/inc/header_menu-rtl.css',"Web",$cssReBuild) !!}
     @endif
+    @if($theme == 'dark')
+        {!! $minifyTools->MinifyCss('css/dark.css',$cssMinifyType,$cssReBuild) !!}
+    @endif
 
     @stack('CssFile')
 </head>

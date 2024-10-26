@@ -23,6 +23,12 @@ class HomeController extends Controller {
 
         $minifyTools = new MinifyTools();
 
+        $this->theme = session('theme', 'light');
+        View::share("theme", $this->theme);
+
+
+
+
         return view('restaurant.header-menu')->with([
             'pageView' => $pageView,
             'minifyTools' => $minifyTools,

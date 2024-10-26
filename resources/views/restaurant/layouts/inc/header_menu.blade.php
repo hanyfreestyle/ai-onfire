@@ -18,6 +18,12 @@
 
                 <div class="__icon">
                     <div class="btn login-button" aria-label="Login">
+                        <a href="{{route('toggle-theme')}}"> <i class="fas fa-home"></i></a>
+                    </div>
+                </div>
+
+                <div class="__icon">
+                    <div class="btn login-button" aria-label="Login">
                         <i class="fas fa-user"></i>
                     </div>
                 </div>
