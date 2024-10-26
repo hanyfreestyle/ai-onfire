@@ -44,11 +44,24 @@ function scrollToSection(e) {
     e.preventDefault();
     const targetId = this.getAttribute('href');
     const targetSection = document.querySelector(targetId);
+
+    // حساب موضع القسم والانتقال العمودي
     const headerOffset = header.offsetHeight + horizontalTabs.offsetHeight;
     const targetPosition = targetSection.offsetTop - headerOffset;
 
     window.scrollTo({
         top: targetPosition,
+        behavior: 'smooth'
+    });
+
+    // تحريك التبويب إلى المنتصف أفقيًا
+    const tabWidth = this.offsetWidth;
+    const tabOffset = this.offsetLeft;
+    const containerWidth = horizontalTabs.clientWidth;
+
+    // ضبط التمرير لجعل التبويب في المنتصف
+    horizontalTabs.scrollTo({
+        left: tabOffset - (containerWidth / 2) + (tabWidth / 2),
         behavior: 'smooth'
     });
 }
@@ -72,3 +85,4 @@ horizontalTabs.addEventListener('scroll', handleTabScroll);
 toggleHeaderScroll();
 highlightActiveTab();
 
+tabs.forEach(tab => tab.addEventListener('click', scrollToSection));
