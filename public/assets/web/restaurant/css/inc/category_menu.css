@@ -34,7 +34,8 @@ html[lang="ar"] .horizontal-tabs {
     align-items: center;
     color: var(--dark-blue);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: all var(--transition-speed) ease;
     position: relative;
 }
@@ -68,7 +69,7 @@ html[lang="ar"] .horizontal-tabs {
 
     .tab {
         padding: 0 10px;
-        font-size: 0.8rem;
+        font-size: .9rem;
     }
 
 }
