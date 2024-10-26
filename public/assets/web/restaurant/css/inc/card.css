@@ -141,12 +141,13 @@
     justify-content: space-between;
     gap: 8px;
     padding: 0 5px;
+
 }
 
 .quantity__controls {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
     flex-shrink: 0;
 }
 
@@ -231,8 +232,11 @@
     }
 
     .add_to_cart {
-        padding: 5px 10px;
+        padding: 5px 7px;
+        font-size: .8rem;
     }
+
+
 }
 
 @media screen and (max-width: 480px) {
