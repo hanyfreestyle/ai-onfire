@@ -4,22 +4,6 @@ html[lang="ar"] .horizontal-tabs {
     /*justify-content: flex-end; !* محاذاة القائمة إلى اليمين *!*/
 }
 
-/*html[lang="ar"] .tab {*/
-/*    text-align: right; !* محاذاة النص إلى اليمين *!*/
-/*}*/
-
-/*html[lang="ar"] .tab::after {*/
-/*    left: auto; !* تعطيل اليسار *!*/
-/*    right: 50%; !* وضع المؤشر في المنتصف من الجهة اليمنى *!*/
-/*}*/
-
-/*html[lang="ar"] .tab.active::after,*/
-/*html[lang="ar"] .tab:hover::after {*/
-/*    left: auto; !* تعطيل اليسار *!*/
-/*    right: 0; !* عرض الخط النشط من الجهة اليمنى *!*/
-/*}*/
-
-
 
 .horizontal-tabs {
     display: flex;

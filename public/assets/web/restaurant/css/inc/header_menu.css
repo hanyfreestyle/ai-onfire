@@ -13,6 +13,10 @@
     z-index: 1000;
 }
 
+.main-header .container {
+    width: 95%;
+}
+
 .main-header.scrolled {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -27,18 +31,21 @@
 }
 
 .logo {
-
+    height: var(--header-height)!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .logo img {
-    margin: auto;
-    max-width: 95%;
+
+    max-height:50px;
 
 }
 
 .main-header.scrolled .logo img {
-   
+
 }
 
 .nav-menu {
@@ -204,7 +211,9 @@
 
     .logo {
         max-width: 45%;
+        max-height:85%;
     }
+
 }
 
 /* ضبط اتجاه اللوجو وفقًا للغة */
