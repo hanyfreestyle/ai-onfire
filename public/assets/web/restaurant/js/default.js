@@ -72,24 +72,3 @@ horizontalTabs.addEventListener('scroll', handleTabScroll);
 toggleHeaderScroll();
 highlightActiveTab();
 
-
-// Intersection Observer for more accurate section tracking
-const observerOptions = {
-    root: null,
-    rootMargin: `-${header.offsetHeight + horizontalTabs.offsetHeight}px 0px 0px 0px`,
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const id = entry.target.id;
-            tabs.forEach(tab => {
-                const href = tab.getAttribute('href').substring(1);
-                tab.classList.toggle('active', href === id);
-            });
-        }
-    });
-}, observerOptions);
-
-sections.forEach(section => observer.observe(section));
