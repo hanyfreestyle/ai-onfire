@@ -5,11 +5,42 @@
 }
 
 .category__section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-
 
 }
+
+.category__section_h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-right: 30px;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1rem!important;
+}
+
+.styled-text {
+
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: var(--white); /* خلفية بيضاء للنص */
+    padding: 5px 50px; /* مسافة على الجانبين */
+    position: relative;
+    z-index: 1;
+    min-width: 100px;
+}
+
+.category__section_h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: translateY(-50%);
+    z-index: 0; /* لجعل الخط خلف النص */
+}
+
+
 
 .category__container {
     display: flex;

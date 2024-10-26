@@ -3,7 +3,9 @@
     <div class="container category__container__section">
         @foreach($categoriesWithProducts as $categoryId => $products)
             <section id="Category-{{$categoryId}}" class="category__section">
-                <h2>{{$products->first()->category_name}}</h2>
+                <h2 class="category__section_h2">
+                    <span class="styled-text">{{$products->first()->category_name}}</span>
+                </h2>
                 <div class="category__container">
 
                     @foreach($products as $product)
