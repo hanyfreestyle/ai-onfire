@@ -1,95 +1,254 @@
-.category__section {
-    padding: 10px 0;
-    margin: 20px 0;
+/*.category__section {*/
+/*    padding: 10px 0;*/
+/*    margin: 20px 0;*/
+/*    width: 100%;*/
+/*}*/
 
-}
 
-.category__section h2 {
+/*.category__section_h2 {*/
+/*    width:100%;*/
+/*    margin-bottom: 20px;*/
+/*    padding-right: 30px;*/
+/*    position: relative;*/
+/*    font-size: 1.1rem;*/
+/*    line-height: 1rem!important;*/
+/*}*/
 
+/*.styled-text {*/
+/*    font-weight: bold;*/
+/*    color: var(--white);*/
+/*    background-color: var(--primary-color);*/
+/*    padding: 5px 50px; !* مسافة على الجانبين *!*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    min-width: 100px;*/
+/*    border-radius: .3rem;*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*    .category__section_h2 {*/
+/*        width:90%;*/
+/*        font-size: .9rem;*/
+/*    }*/
+/*    .styled-text {*/
+/*        padding: 3px 20px;*/
+/*    }*/
+/*}*/
+
+/*.category__section_h2::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    height: 2px;*/
+/*    background-color: var(--primary-color);;*/
+/*    transform: translateY(-50%);*/
+/*    z-index: 0; !* لجعل الخط خلف النص *!*/
+/*}*/
+
+
+
+/*.category__container {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    background-color: #ffb74d;*/
+/*    gap: 15px; !* المسافة بين الكروت *!*/
+/*}*/
+
+/*.product__card {*/
+/*    width: calc(25% - 15px); !* عرض 4 كروت في الصف مع المسافة *!*/
+/*    box-sizing: border-box;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.card__img {*/
+/*    width: 100%;*/
+/*    height: 200px;*/
+/*    overflow: hidden;*/
+/*    background-color: red;*/
+/*}*/
+
+/*.card__img img {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover; !* لتغطية الصورة بالكامل داخل العنصر *!*/
+/*}*/
+
+/*.card__name {*/
+/*    margin-top: 10px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*!* تنسيق خاص لشاشات الموبايل *!*/
+/*@media (max-width: 768px) {*/
+/*    .product__card {*/
+/*        width: calc(50% - 15px); !* عرض 4 كروت في الصف مع المسافة *!*/
+/*    }*/
+
+/*    .card__img {*/
+/*        width: 100%;*/
+/*        height: 100px;*/
+/*        overflow: hidden;*/
+/*    }*/
+/*}*/
+
+.category__container__section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .category__section_h2 {
-    width:94%;
-    margin-bottom: 20px;
-    padding-right: 30px;
-    position: relative;
-    font-size: 1.1rem;
-    line-height: 1rem!important;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2rem;
 }
 
 .styled-text {
-    font-weight: bold;
-    color: var(--primary-color);
-    background-color: var(--white); /* خلفية بيضاء للنص */
-    padding: 5px 50px; /* مسافة على الجانبين */
     position: relative;
-    z-index: 1;
-    min-width: 100px;
+    padding-bottom: 10px;
 }
 
-@media (max-width: 768px) {
-    .styled-text {
-        padding: 5px 30px; /* مسافة على الجانبين */
-    }
-}
-
-.category__section_h2::after {
+.styled-text::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--primary-color);;
-    transform: translateY(-50%);
-    z-index: 0; /* لجعل الخط خلف النص */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    border-radius: 2px;
 }
 
-
-
+/* Grid Layout */
 .category__container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px; /* المسافة بين الكروت */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row on desktop */
+    gap: 20px;
+    direction: rtl;
 }
 
+/* Product Card Styles */
 .product__card {
-    width: calc(25% - 15px); /* عرض 4 كروت في الصف مع المسافة */
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.card__img {
-    width: 100%;
-    height: 200px;
+.product__card:hover {
+    transform: translateY(-5px);
+}
+
+/* Product Image Container */
+.product__image {
+    position: relative;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
     overflow: hidden;
 }
 
-.card__img img {
+.product__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* لتغطية الصورة بالكامل داخل العنصر */
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.card__name {
-    margin-top: 10px;
+.product__card:hover .product__image img {
+    transform: scale(1.05);
+}
+
+/* Product Overlay */
+.product__overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    background: rgba(52, 152, 219, 0.9);
+    padding: 10px;
+    transition: bottom 0.3s ease;
+}
+
+.product__card:hover .product__overlay {
+    bottom: 0;
+}
+
+/* Product Details */
+.product__details {
+    padding: 15px;
     text-align: center;
 }
 
-/* تنسيق خاص لشاشات الموبايل */
-@media (max-width: 768px) {
-    .product__card {
-        width: calc(50% - 15px); /* عرض 4 كروت في الصف مع المسافة */
+.product__name {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product__price {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Add to Cart Button */
+.add_to_cart {
+    background: #fff;
+    color: #3498db;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.add_to_cart:hover {
+    background: #2980b9;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .category__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .category__container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
+        gap: 15px;
     }
 
-    .card__img {
-        width: 100%;
-        height: 100px;
-        overflow: hidden;
+    .category__section_h2 {
+        font-size: 1.5rem;
+    }
+
+    .product__name {
+        font-size: 1rem;
+    }
+
+    .product__price {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category__container__section {
+        padding: 10px;
     }
 }

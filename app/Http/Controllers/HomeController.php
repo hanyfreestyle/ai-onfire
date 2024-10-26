@@ -62,7 +62,8 @@ class HomeController extends Controller {
                 'products.id as product_id',
                 'product_translations.name as product_name',
                 'products.photo as product_image',
-                'products.price as product_price'
+                'products.price as product_price',
+                'products.sale_price as sale_price'
             )
             ->orderBy('categories.id')
             ->get()
