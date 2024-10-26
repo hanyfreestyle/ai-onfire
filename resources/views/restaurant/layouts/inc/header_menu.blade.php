@@ -3,7 +3,7 @@
         <nav class="nav-container">
             <div class="logo">
                 <a href="{{route('home_'.request()->segment(1))}}">
-                    <img src="{{asset("assets/web/restaurant/img/logo_".$theme.".webp")}}" alt="شعار المطعم">
+                    <img src="{{asset("assets/web/restaurant/img/logo_".$theme.".png")}}" alt="شعار المطعم">
                 </a>
             </div>
             <ul class="nav-menu">
@@ -17,8 +17,20 @@
             <div class="menu__icon">
 
                 <div class="__icon">
+                    <div class="btn __lang" aria-label="lang">
+                        <a href="{{route('home_'.request()->segment(1))}}">
+                            @if(request()->segment(1) == 'ar')
+                                EN
+                            @else
+                                AR
+                            @endif
+                        </a>
+                    </div>
+                </div>
+
+                <div class="__icon">
                     <div class="btn login-button" aria-label="Login">
-                        <a href="{{route('toggle-theme')}}"> <i class="fas fa-home"></i></a>
+                        <a href="{{route('toggle-theme')}}"><i class="fas fa-adjust"></i></a>
                     </div>
                 </div>
 
