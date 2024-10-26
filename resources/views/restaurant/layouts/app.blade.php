@@ -7,10 +7,9 @@
     <link href="{{asset("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css")}}" rel="stylesheet">
     <link href="{{asset("assets/web/restaurant/css/default.css")}}" rel="stylesheet">
     <link href="{{asset("assets/web/restaurant/css/inc/header_menu.css")}}" rel="stylesheet">
-
-
-    {{--    <link href="{{asset("assets/web/restaurant/css/inc/category_menu.css")}}" rel="stylesheet">--}}
-    {{--    <link href="{{asset("assets/web/restaurant/css/inc/footer.css")}}" rel="stylesheet">--}}
+    <link href="{{asset("assets/web/restaurant/css/inc/category_menu.css")}}" rel="stylesheet">
+    <link href="{{asset("assets/web/restaurant/css/inc/footer.css")}}" rel="stylesheet">
+    <link href="{{asset("assets/web/restaurant/css/inc/footer.css")}}" rel="stylesheet">
 
     @if(request()->segment(1) == 'ar')
         <link href="{{asset("assets/web/restaurant/css/inc/header_menu-rtl.css")}}" rel="stylesheet">
@@ -22,11 +21,11 @@
 <body>
 
 @include('restaurant.layouts.inc.header_menu')
-{{--@include('restaurant.layouts.inc.category_menu')--}}
+@include('restaurant.layouts.inc.category_menu')
 
-{{--@yield('content')--}}
+@yield('content')
 
-{{--@include('restaurant.layouts.inc.footer')--}}
+@include('restaurant.layouts.inc.footer')
 
 <script src="{{asset("assets/web/restaurant/js/default.js")}}"></script>
 @stack('JsFile')

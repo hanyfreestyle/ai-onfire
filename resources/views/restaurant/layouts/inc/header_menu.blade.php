@@ -2,7 +2,7 @@
     <div class="container">
         <nav class="nav-container">
             <div class="logo">
-                <img src="https://freestyle4u.com/ai/logo.svg" alt="شعار المطعم">
+                <img src="{{asset("assets/web/restaurant/img/logo.svg")}}" alt="شعار المطعم">
             </div>
             <ul class="nav-menu">
                 <li><a href="#" class="active">Home</a></li>
