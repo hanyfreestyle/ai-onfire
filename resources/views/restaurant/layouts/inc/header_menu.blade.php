@@ -7,17 +7,15 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Offers</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
+                @foreach($menu_lang as $menu)
+                    <li><a href="#" class="@if($loop->index == '0') active @endif active_xx">{{$menu}}</a></li>
+                @endforeach
             </ul>
 
             <div class="menu__icon">
 
-                <div class="__icon">
-                    <div class="btn __lang" aria-label="lang">
+                <div class="__icon __lang_icon">
+                    <div class="btn " aria-label="lang">
                         <a href="{{route('home_'.request()->segment(1))}}">
                             @if(request()->segment(1) == 'ar')
                                 EN
@@ -28,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="__icon">
+                <div class="__icon __dark_icon">
                     <div class="btn login-button" aria-label="Login">
                         <a href="{{route('toggle-theme')}}"><i class="fas fa-adjust"></i></a>
                     </div>
@@ -60,11 +58,9 @@
     <div class="menu-content">
         <button class="close-menu" onclick="toggleMenu()" aria-label="Close Menu"></button>
         <div class="menu-section">
-            <a href="#" class="active">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">Offers</a>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
+            @foreach($menu_lang as $menu)
+                <a href="#">{{$menu}}</a>
+            @endforeach
         </div>
     </div>
 </div>

@@ -191,10 +191,8 @@
 }
 
 
-.__icon .__lang {
+.__lang_icon {
     font-weight: 600;
-    font-family: 'Cairo', sans-serif !important;
-    font-size: .9rem;
 }
 
 
@@ -210,6 +208,14 @@
     .logo img {
         max-height:40px;
     }
+
+    .__lang_icon {
+        display: none
+    }
+    /*.__dark_icon {*/
+    /*    display: none*/
+    /*}*/
+
 
 }
 
