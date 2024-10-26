@@ -51,3 +51,89 @@ h1, h2, h3, h4, h5, h6 {
 /*        color: var(--orange);*/
 /*    }*/
 /*}*/
+
+
+
+/*:root {*/
+/*    --dark-mode-100:  rgba(34, 34, 34,1);*/
+/*    --dark-mode-50:  rgba(34, 34, 34,.9);*/
+/*    --dark-mode-25:  rgba(34, 34, 34,.25);*/
+
+/*}*/
+
+
+/*body {*/
+/*    background-color: var(--dark-mode-50);*/
+/*    color: #fff;*/
+/*}*/
+
+/*.nav-menu a {*/
+/*    color: var(--white);*/
+/*    background-color: #222;*/
+/*}*/
+
+/*.nav-menu a:hover,*/
+/*.nav-menu a.active {*/
+/*    color: var(--orange);*/
+/*}*/
+
+
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #f5f5f5;
+    --primary-color: #f0f0f0;
+    --secondary-color: #ffb74d;
+    --box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    --menu-background: rgba(20, 20, 20, 0.95);
+    --icon-color: #f0f0f0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.main-header ,.horizontal-tabs {
+    background-color: var(--background-color)!important;
+    box-shadow: var(--box-shadow);
+}
+
+.nav-menu a ,.tab {
+    color: var(--primary-color)!important;
+}
+
+.tab.active, .tab:hover {
+    color: var(--orange)!important;
+}
+.tab.active {
+    color: #ffffff!important;
+    background-color: var(--orange)!important;;
+}
+
+
+
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--secondary-color);
+}
+
+.full-screen-menu {
+    background-color: var(--menu-background);
+}
+
+.full-screen-menu .menu-content .close-menu {
+    color: var(--text-color);
+}
+
+.hamburger-menu span {
+    background: var(--icon-color);
+}
+
+.full-screen-menu .menu-section a {
+    color: var(--primary-color);
+}
+
+.full-screen-menu .menu-section a:hover {
+    color: var(--secondary-color);
+}
