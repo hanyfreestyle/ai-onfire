@@ -13,6 +13,7 @@
     @if(request()->segment(1) == 'ar')
         {!! $minifyTools->MinifyCss('css/inc/header_menu-rtl.css',"Web",$cssReBuild) !!}
     @endif
+
     @stack('CssFile')
 </head>
 

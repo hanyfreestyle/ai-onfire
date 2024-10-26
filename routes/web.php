@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () { return view('home'); });
-Route::get('en/header-menu', [HomeController::class, 'HomePage'])->name('header-menu');
-Route::get('ar/header-menu', [HomeController::class, 'HomePage'])->name('header-menu');
+Route::get('en/header-menu', [HomeController::class, 'HomePage'])->name('home_ar');
+Route::get('ar/header-menu', [HomeController::class, 'HomePage'])->name('home_en');
 //Route::get('en/header-menu', function () { return view('restaurant.header-menu'); });
 //Route::get('ar/header-menu', function () { return view('restaurant.header-menu'); });
 

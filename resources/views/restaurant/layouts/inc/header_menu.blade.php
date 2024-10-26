@@ -2,7 +2,9 @@
     <div class="container">
         <nav class="nav-container">
             <div class="logo">
-                <img src="{{asset("assets/web/restaurant/img/logo.svg")}}" alt="شعار المطعم">
+                <a href="{{route('home_'.request()->segment(1))}}">
+                    <img src="{{asset("assets/web/restaurant/img/logo.svg")}}" alt="شعار المطعم">
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#" class="active">Home</a></li>
