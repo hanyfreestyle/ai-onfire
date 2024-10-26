@@ -17,7 +17,7 @@
     {!! $minifyTools->MinifyCss('css/default.css',$cssMinifyType,$cssReBuild) !!}
     {!! $minifyTools->MinifyCss('css/inc/header_menu.css',$cssMinifyType,$cssReBuild) !!}
     {!! $minifyTools->MinifyCss('css/inc/category_menu.css',$cssMinifyType,$cssReBuild) !!}
-{{--    {!! $minifyTools->MinifyCss('css/inc/footer.css',$cssMinifyType,$cssReBuild) !!}--}}
+    {!! $minifyTools->MinifyCss('css/inc/footer.css',$cssMinifyType,$cssReBuild) !!}
     {!! $minifyTools->MinifyCss('css/inc/card.css',$cssMinifyType,$cssReBuild) !!}
 
     @if(request()->segment(1) == 'ar')
@@ -37,7 +37,7 @@
 
 @yield('content')
 
-{{--@include('restaurant.layouts.inc.footer')--}}
+@include('restaurant.layouts.inc.footer')
 {!! $minifyTools->MinifyJs('js/default.js',$jsMinifyType,$cssReBuild) !!}
 @stack('JsFile')
 </body>
