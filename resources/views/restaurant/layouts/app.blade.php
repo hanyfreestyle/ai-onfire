@@ -9,7 +9,6 @@
     <link href="{{asset("assets/web/restaurant/css/inc/header_menu.css")}}" rel="stylesheet">
     <link href="{{asset("assets/web/restaurant/css/inc/category_menu.css")}}" rel="stylesheet">
     <link href="{{asset("assets/web/restaurant/css/inc/footer.css")}}" rel="stylesheet">
-    <link href="{{asset("assets/web/restaurant/css/inc/footer.css")}}" rel="stylesheet">
 
     @if(request()->segment(1) == 'ar')
         <link href="{{asset("assets/web/restaurant/css/inc/header_menu-rtl.css")}}" rel="stylesheet">
@@ -25,13 +24,9 @@
 
 @yield('content')
 
-@include('restaurant.layouts.inc.footer')
+{{--@include('restaurant.layouts.inc.footer')--}}
 
 <script src="{{asset("assets/web/restaurant/js/default.js")}}"></script>
 @stack('JsFile')
-<script>
-
-
-</script>
 </body>
 </html>
