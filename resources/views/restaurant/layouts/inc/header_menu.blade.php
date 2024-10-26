@@ -3,7 +3,7 @@
         <nav class="nav-container">
             <div class="logo">
                 <a href="{{route('home_'.request()->segment(1))}}">
-                    <img src="{{asset("assets/web/restaurant/img/logo.svg")}}" alt="شعار المطعم">
+                    <img src="{{asset("assets/web/restaurant/img/logo_".$theme.".webp")}}" alt="شعار المطعم">
                 </a>
             </div>
             <ul class="nav-menu">
