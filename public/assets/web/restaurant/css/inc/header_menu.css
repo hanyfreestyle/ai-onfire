@@ -168,4 +168,24 @@
     .nav-menu {
         display: none; /* إخفاء القائمة الرئيسية في الشاشات الصغيرة */
     }
+    .menu__icon {
+        display: flex; /* عرض الأيقونات مثل السلة والتسجيل */
+    }
+}
+
+/* ضبط اتجاه اللوجو وفقًا للغة */
+body[dir="rtl"] .nav-container {
+    flex-direction: row-reverse; /* تحويل الاتجاه للغات من اليمين إلى اليسار */
+}
+body[dir="rtl"] .logo {
+    margin-left: 0;
+    margin-right: auto; /* محاذاة الشعار إلى اليمين */
+}
+
+body[dir="ltr"] .nav-container {
+    flex-direction: row; /* تحويل الاتجاه للغات من اليسار إلى اليمين */
+}
+body[dir="ltr"] .logo {
+    margin-right: 0;
+    margin-left: auto; /* محاذاة الشعار إلى اليسار */
 }
