@@ -29,7 +29,7 @@ html[lang="ar"] .horizontal-tabs {
     height: 100%;
     display: flex;
     align-items: center;
-    color: var(--dark-blue);
+    color: var(--medium-gray);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
