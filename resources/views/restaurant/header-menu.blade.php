@@ -5,6 +5,7 @@
             <section id="Category-{{$categoryId}}" class="category__section">
                 <h2 class="category__section_h2">
                     <span class="styled-text">{{$products->first()->category_name}}</span>
+                    <span class="category-description">{{$products->first()->category_des}}</span>
                 </h2>
                 <div class="category__container">
                     @foreach($products as $product)
@@ -16,14 +17,15 @@
                             </div>
                             <div class="product__details">
                                 <h3 class="product__name">{{$product->product_name}}</h3>
+                                <p class="product__des">{{$product->product_des}}</p>
                                 <div class="price__container">
                                     @if($product->sale_price)
                                         <span class="old__price">{{$product->sale_price}} <span class="currency">جنية</span></span>
                                     @else
-                                        <span class="old__price">
-    <span class="price-value">{{$product->product_price + rand(50,100)}}</span>
-    <span class="currency">جنيه</span>
-</span>
+                                        <div class="old__price">
+                                            <span class="price-value">{{$product->product_price + rand(50,100)}}</span>
+                                            <span class="currency">جنيه</span>
+                                        </div>
 
                                     @endif
                                     <span class="current__price">{{$product->product_price}} <span class="currency">جنية</span></span>
@@ -47,8 +49,6 @@
             </section>
         @endforeach
     </div>
-
-
 @endsection
 
 @push('JsFile')

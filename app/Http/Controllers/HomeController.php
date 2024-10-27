@@ -59,8 +59,10 @@ class HomeController extends Controller {
             ->select(
                 'categories.id as category_id',
                 'category_translations.name as category_name',
+                'category_translations.des as category_des',
                 'products.id as product_id',
                 'product_translations.name as product_name',
+                'product_translations.des as product_des',
                 'products.photo as product_image',
                 'products.price as product_price',
                 'products.sale_price as sale_price'

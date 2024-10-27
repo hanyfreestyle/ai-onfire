@@ -10,13 +10,45 @@
 }
 
 /* Category Title Style */
+/*.category__section_h2 {*/
+/*    text-align: right;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    margin-bottom: 10px;*/
+/*    padding-right: 20px;*/
+
+/*}*/
+
+/*.category__section_h2::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    border-bottom: 2px solid #e0e0e0;*/
+/*    width: 100%;*/
+/*    left: 0;*/
+/*    top: 50%;*/
+/*    z-index: 1;*/
+/*}*/
+
+/*.styled-text {*/
+/*    background: white;*/
+/*    padding: 0 20px;*/
+/*    position: relative;*/
+/*    z-index: 2;*/
+/*    color: #333;*/
+/*    font-size: 1.8rem;*/
+/*}*/
+
+
+
 .category__section_h2 {
     text-align: right;
     position: relative;
     overflow: hidden;
     margin-bottom: 10px;
     padding-right: 20px;
-
+    display: flex; /* استخدام الفلكس لترتيب العناصر بجانب بعضها */
+    align-items: center; /* لتوسيط النصوص عموديًا */
+    gap: 10px; /* مسافة بين النصوص */
 }
 
 .category__section_h2::after {
@@ -37,6 +69,18 @@
     color: #333;
     font-size: 1.8rem;
 }
+
+.category-description {
+    background: white;
+    padding: 0 10px;
+    color: #777;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+
+
 
 /* Grid Layout */
 .category__container {
