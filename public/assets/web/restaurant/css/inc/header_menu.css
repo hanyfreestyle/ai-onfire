@@ -55,14 +55,14 @@
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--dark-gray);
     font-weight: 600;
     transition: color var(--transition-speed);
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .hamburger-menu {
@@ -72,7 +72,7 @@
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
-    display: none; /* مخفي افتراضياً، يُعرض في الشاشات الصغيرة */
+    display: none;
 }
 
 .hamburger-menu span {
@@ -90,7 +90,7 @@
 }
 
 .hamburger-menu.open span:nth-child(2) {
-    opacity: 0; /* تعطيل الطبقة الثانية عند فتح القائمة */
+    opacity: 0;
 }
 
 .hamburger-menu.open span:nth-child(3) {
@@ -103,10 +103,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 57, 116, 0.95);
+    background-color: var(--mobile-menu-bg);
     z-index: 2000;
     overflow-y: auto;
-    opacity: 0; /* افتراضياً، مخفي وغير مرئي */
+    opacity: 0;
     visibility: hidden;
     transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
 }

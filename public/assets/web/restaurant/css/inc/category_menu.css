@@ -1,9 +1,6 @@
-/* إضافة دعم للاتجاه من اليمين إلى اليسار */
 html[lang="ar"] .horizontal-tabs {
-    /*direction: rtl; !* تغيير اتجاه القائمة إلى اليمين *!*/
-    /*justify-content: flex-end; !* محاذاة القائمة إلى اليمين *!*/
-}
 
+}
 
 .horizontal-tabs {
     display: flex;
@@ -47,7 +44,7 @@ html[lang="ar"] .horizontal-tabs {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--orange);
+    background-color: var(--primary-color);
     transition: all var(--transition-speed) ease;
 }
 
@@ -57,7 +54,7 @@ html[lang="ar"] .horizontal-tabs {
 }
 
 .tab.active, .tab:hover {
-    color: var(--orange);
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
