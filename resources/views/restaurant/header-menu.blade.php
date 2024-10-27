@@ -3,8 +3,15 @@
 
 
     <div class="category__container__section">
+
+
+        <div class="view-toggle" onclick="toggleView()">
+            <i class="fas fa-th-large"></i>
+{{--            <i class="fas fa-stream"></i>--}}
+        </div>
+
         @foreach($categoriesWithProducts as $categoryId => $products)
-            <section id="Category-{{$categoryId}}" class="category__section list-view">
+            <section id="Category-{{$categoryId}}" class="category__section list-view ">
                 <h2 class="category__section_h2">
                     <span class="styled-text">{{$products->first()->category_name}}</span>
                     <span class="category-description">{{$products->first()->category_des}}</span>
@@ -81,7 +88,25 @@
         });
     </script>
 
+    <script>
+        // Toggle between grid and list view
+        function toggleView() {
+            const container = document.querySelector('.category__section');
+            if (container.classList.contains('list-view')) {
+                container.classList.remove('list-view');
+                container.classList.add('grid-view');
+            } else {
+                container.classList.remove('grid-view');
+                container.classList.add('list-view');
+            }
+        }
 
+        // Set initial view
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.category__section');
+            container.classList.add('list-view');
+        });
+    </script>
 
 @endpush
 
