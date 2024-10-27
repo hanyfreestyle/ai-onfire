@@ -56,6 +56,7 @@ class HomeController extends Controller {
             ->join('product_translations', 'products.id', '=', 'product_translations.product_id')
             ->where('category_translations.locale', $langFiter)
             ->where('product_translations.locale', $langFiter)
+            ->where('categories.id', 1)
             ->select(
                 'categories.id as category_id',
                 'category_translations.name as category_name',
@@ -68,6 +69,7 @@ class HomeController extends Controller {
                 'products.sale_price as sale_price'
             )
             ->orderBy('categories.id')
+
             ->get()
             ->groupBy('category_id'); // تجميع المنتجات تحت معرف المجموعة
 

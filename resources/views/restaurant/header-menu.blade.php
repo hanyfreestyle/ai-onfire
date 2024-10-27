@@ -1,8 +1,10 @@
 @extends('restaurant.layouts.app')
 @section('content')
+
+
     <div class="category__container__section">
         @foreach($categoriesWithProducts as $categoryId => $products)
-            <section id="Category-{{$categoryId}}" class="category__section">
+            <section id="Category-{{$categoryId}}" class="category__section list-view">
                 <h2 class="category__section_h2">
                     <span class="styled-text">{{$products->first()->category_name}}</span>
                     <span class="category-description">{{$products->first()->category_des}}</span>
