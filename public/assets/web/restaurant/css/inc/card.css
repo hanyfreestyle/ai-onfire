@@ -14,11 +14,12 @@
     text-align: right;
     position: relative;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding-right: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
+
 }
 
 .category__section_h2::after {
@@ -36,17 +37,18 @@
     padding: 0 20px;
     position: relative;
     z-index: 2;
-    color: #333;
-    font-size: 1.8rem;
+    color:  var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 .category-description {
     background: white;
     padding: 0 10px;
     color: #777;
-    font-size: 1rem;
+    font-size: .9rem;
     position: relative;
     z-index: 2;
+    font-weight: 500;
 }
 
 
@@ -64,7 +66,7 @@
     border-radius: 8px;
     border: 1px solid #e0e0e0;
     overflow: hidden;
-    max-height: 320px;
+    /*max-height: 320px;*/
 }
 
 /* Product Image Container */
@@ -90,7 +92,7 @@
     object-fit: cover;
 }
 
-/* Product Details */
+
 .product__details {
     padding: 10px;
 }
@@ -99,14 +101,21 @@
     margin: 0;
     font-size: 1rem;
     color: #333;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: right;
 }
 
-/* Price Styles */
+.product__des{
+    margin: 0;
+    font-size: .8rem;
+    font-weight: 500;
+    min-height: 50px;
+    color: var(--medium-gray);
+}
+
+
 .price__container {
     text-align: left;
     margin-bottom: 10px;
@@ -117,7 +126,7 @@
     font-size: 1rem;
     margin-left: 8px;
     position: relative;
-    display: inline-block; /* للحفاظ على التنسيق الأفقي */
+    display: inline-block;
 }
 
 .old__price::after {
@@ -126,14 +135,14 @@
     left: 0;
     right: 0;
     top: 50%;
-    height: 1px; /* سمك الخط */
-    background-color: #999; /* نفس لون السعر القديم */
-    transform: translateY(-50%); /* لتوسيط الخط المشطوب */
+    height: 1px;
+    background-color: #999;
+    transform: translateY(-50%);
     z-index: 1;
 }
 
 .current__price {
-    color: #ff4d4d;
+    color: var(--primary-color);
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -144,16 +153,14 @@
     margin-right: 2px;
 }
 
-
-/* Cart Controls */
 .cart__controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
     padding: 0 5px;
-
 }
+
 
 .quantity__controls {
     display: flex;
@@ -190,9 +197,9 @@
     font-weight: 600;
 }
 
-/* Add to Cart Button */
+
 .add_to_cart {
-    background: var(--orange);
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 4px 10px;
@@ -210,14 +217,13 @@
 }
 
 .add_to_cart:hover {
-    background: var(--orange);
+    background: var(--primary-color);
 }
 
 .fa-cart-shopping {
     font-size: 0.9em;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
     .category__container {
         grid-template-columns: repeat(3, 1fr);
@@ -235,7 +241,7 @@
     }
 
     .product__card {
-        max-height: 300px;
+
     }
 
     .desktop__text {
@@ -245,21 +251,51 @@
     .add_to_cart {
         padding: 5px 7px;
     }
-
-
 }
 
 @media screen and (max-width: 480px) {
     .category__container__section {
         padding: 10px;
     }
-
-    .product__card {
-        max-height: 280px;
-    }
-
     .quantity__btn {
         width: 22px;
         height: 22px;
     }
+
+    .category__section_h2 {
+        padding-right: 10px;
+        display: block;
+    }
+    .category__section_h2::after {
+        border-bottom: 1px solid #e0e0e0!important;
+        top: 40%;
+    }
+
+    .styled-text {
+        padding: 5px 10px;
+        font-size:.9rem!important;
+    }
+
+    .category-description {
+        background:none;
+        padding: 0 10px;
+        font-size:.8rem!important;
+        font-weight: 500;
+        width: 100%;
+        display: block;
+    }
+
+
+    .product__name {
+        font-size: .9rem;
+    }
+
+    .product__des{
+        margin: 0;
+        font-size: .8rem;
+        font-weight: 400;
+        min-height: 50px;
+        color: var(--medium-gray);
+    }
+
 }

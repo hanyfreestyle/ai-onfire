@@ -66,14 +66,12 @@ html[lang="ar"] .horizontal-tabs {
 
     .tab {
         padding: 0 10px;
-        font-size: .9rem;
+        font-size: .82rem;
     }
 
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-
-
     .horizontal-tabs {
         padding: 0 4%;
     }
@@ -81,13 +79,9 @@ html[lang="ar"] .horizontal-tabs {
     .tab {
         padding: 0 12px;
     }
-
-
 }
 
 @media (min-width: 1025px) {
-
-
     .horizontal-tabs {
         padding: 0 5%;
     }
